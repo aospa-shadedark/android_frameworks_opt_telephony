@@ -1653,6 +1653,8 @@ public abstract class Phone extends Handler implements PhoneInternalInterface {
 
 // QTI_BEGIN: 2025-02-03: Telephony: Decouple Qualcomm value adds.
     public void setNetworkSelectionModeManual(OperatorInfo network, Message response) {
+        logd("setNetworkSelectionModeManual");
+        mCi.setNetworkSelectionModeManual(network.getOperatorNumeric(), network.getRan(), response);
     }
 
 // QTI_END: 2025-02-03: Telephony: Decouple Qualcomm value adds.
